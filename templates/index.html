@@ -1,0 +1,44 @@
+{% extends "bootstrap/base.html" %}
+
+{% block head %}
+    {{ super() }}
+        <!-- jQuery reference-->
+        <script
+          src="https://code.jquery.com/jquery-3.1.1.js"
+          integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+          crossorigin="anonymous"></script>
+
+        <script src="{{ url_for('static', filename='javascript/app.js') }}"></script>
+
+{% endblock %}
+
+{% block Title %} Bitcoin Tracker {% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+{% block content %}
+
+    <h2>"Hello world, Bitcoin tracker here!"</h2>
+
+    <p>Got to <a href="/run">"/run"</a> to see the latest BTC price</p>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="row">Last Price:</div>
+            <div class="row">High:</div>
+            <div class="row">Low:</div>
+        </div>
+        <div class="col-xs-6">
+            <div class="row">  $ <span id="ask">NA</span> </div>
+            <div class="row"> $ <span id="high">NA</span> </div>
+            <div class="row">  $ <span id="low">NA</span> </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+</div>
+
+{% endblock %}
